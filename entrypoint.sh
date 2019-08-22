@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-echo "hello $1"
+curl -X POST -d {} https://api.netlify.com/build_hooks/$INPUT_NETLIFYHOOKKEY

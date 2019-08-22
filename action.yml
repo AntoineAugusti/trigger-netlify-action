@@ -1,12 +1,13 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
-inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+name: 'Trigger Netlify Build'
+description: 'Trigger a build on Netlify for your project'
+author: 'Antoine Augusti'
+branding:
+  icon: 'box'
+  color: 'orange'
+inputs:
+  netlifyHookKey:
+    description: 'The Netlify hook key to trigger the build'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.myInput }}
