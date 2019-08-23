@@ -27,9 +27,13 @@ on:
    branches:
      - master
 
-steps:
-- uses: actions/checkout@master
-- uses: AntoineAugusti/trigger-netlify-action@v1
-  with:
-    netlifyHookKey: ${{ secrets.NETLIFY_HOOK_KEY }} # The Netlify build hook secret
+jobs:
+  build:
+    name: Trigger Netlify Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: AntoineAugusti/trigger-netlify-action@v1
+      with:
+        netlifyHookKey: ${{ secrets.NETLIFY_HOOK_KEY }} # The Netlify build hook secret
 ```
